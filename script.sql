@@ -1,0 +1,13 @@
+CREATE TABLE Club
+(
+    "cl_Id" SERIAL PRIMARY KEY,
+    "cl_Name" VARCHAR(50) NOT NULL
+);
+  
+CREATE TABLE Sportsmen
+(
+    "sp_Id" SERIAL PRIMARY KEY,
+    "cl_Id" INTEGER,
+    "sp_Name" VARCHAR(50) NOT NULL,
+    FOREIGN KEY ("cl_Id") REFERENCES Club("cl_Id") ON DELETE CASCADE ON UPDATE CASCADE
+	);
